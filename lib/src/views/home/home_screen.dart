@@ -21,7 +21,7 @@ class HomeScreen extends StatelessWidget {
               'Current Theme:',
               style: Theme.of(context)
                   .textTheme
-                  .displayLarge, // Use the custom text style from the theme
+                  .bodyMedium, // Use the custom text style from the theme
             ),
             Obx(() {
               // Display the current theme name based on the index.
