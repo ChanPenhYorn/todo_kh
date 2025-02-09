@@ -9,7 +9,7 @@ class AppThemes {
     scaffoldBackgroundColor: AppColors.backgroundLight,
     textTheme: _getTextTheme(false),
     appBarTheme: AppBarTheme(
-      backgroundColor: AppColors.primaryLight,
+      backgroundColor: AppColors.backgroundLight,
       titleTextStyle: TextStyle(
           color: AppColors.onPrimaryLight,
           fontSize: 20,
@@ -24,7 +24,7 @@ class AppThemes {
     scaffoldBackgroundColor: AppColors.backgroundDark,
     textTheme: _getTextTheme(true),
     appBarTheme: AppBarTheme(
-      backgroundColor: AppColors.primaryDark,
+      backgroundColor: AppColors.backgroundDark,
       titleTextStyle: TextStyle(
           color: AppColors.onPrimaryDark,
           fontSize: 20,
@@ -33,7 +33,7 @@ class AppThemes {
   );
 
   // Define the ColorScheme for the light theme.
-  static const ColorScheme _lightColorScheme = ColorScheme(
+  static final ColorScheme _lightColorScheme = ColorScheme(
     brightness: Brightness.light,
     primary: AppColors.primaryLight,
     onPrimary: AppColors.onPrimaryLight,
@@ -50,7 +50,7 @@ class AppThemes {
   );
 
   // Define the ColorScheme for the dark theme.
-  static const ColorScheme _darkColorScheme = ColorScheme(
+  static final ColorScheme _darkColorScheme = ColorScheme(
     brightness: Brightness.dark,
     primary: AppColors.primaryDark,
     onPrimary: AppColors.onPrimaryDark,

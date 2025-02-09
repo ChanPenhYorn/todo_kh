@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
           title: 'Flutter Demo',
           debugShowCheckedModeBanner: false,
           theme: themeController.currentTheme,
-          initialRoute: AppRoutes.home,
+          initialRoute: AppRoutes.welcome,
           getPages: AppPages.routes,
           navigatorObservers: [routeObserver],
           // home: HomeScreen(),

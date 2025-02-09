@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:todo_kh/src/controllers/theme_controller.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:todo_kh/src/routes/app_route.dart';
+import 'package:todo_kh/src/shared/widgets/app_button_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   final ThemeController themeController = Get.find();
@@ -11,32 +14,42 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Custom Theme Switcher'),
+        leading: Icon(Icons.menu),
+        actions: [
+          IconButton(onPressed: () {}, icon: Icon(Icons.notifications))
+        ],
       ),
-      body: Center(
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Text(
-              'Current Theme:',
+              "Welcome to Todo Kh",
               style: Theme.of(context)
                   .textTheme
-                  .bodyMedium, // Use the custom text style from the theme
+                  .headlineSmall!
+                  .copyWith(fontWeight: FontWeight.bold),
             ),
-            Obx(() {
-              // Display the current theme name based on the index.
-              return Text(themeController.currentThemeIndex.value == 0
-                  ? 'Light Theme'
-                  : 'Dark Theme');
-            }),
-            SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                // Toggle the theme when the button is pressed.
-                themeController.toggleTheme();
-              },
-              child: Text('Toggle Theme'),
-            ),
+            Row(
+              children: [
+                       SizedBox(
+                  width: 16,
+                ),
+                Text(
+                  "Today's Progress",
+                  style: Theme.of(context).textTheme.titleMedium,
+                ),
+                SizedBox(
+                  width: 16,
+                ),
+                Text(
+                  "5 tasks left",
+                  style: Theme.of(context).textTheme.titleMedium,
+                ),
+              ],
+            )
           ],
         ),
       ),

@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:hexcolor/hexcolor.dart';
 
 class AppColors {
   // Primary Colors
-  static const Color primaryLight = Colors.blue;
-  static const Color primaryDark = Colors.deepPurple;
+  // static const Color primaryLight = Colors.blue;
+  // static const Color primaryDark = Colors.deepPurple;
+  static Color primaryLight = HexColor("#112D4E");
+  static Color primaryDark = HexColor("#DBE2EF");
 
   // Secondary Colors
   static const Color secondaryLight = Colors.green;
   static const Color secondaryDark = Colors.teal;
 
   // Background Colors
-  static const Color backgroundLight = Colors.white;
-  static const Color backgroundDark = Color(0xFF121212);
+  static Color backgroundLight = HexColor("#F1F2F4");
+  static Color backgroundDark = HexColor("#22272B");
 
   // Surface Colors
   static const Color surfaceLight = Colors.white;
