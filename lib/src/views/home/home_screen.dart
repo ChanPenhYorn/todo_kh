@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:todo_kh/src/controllers/theme_controller.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:todo_kh/src/routes/app_route.dart';
-import 'package:todo_kh/src/shared/widgets/app_button_widget.dart';
+import 'package:todo_kh/src/utils/app_colors.dart';
+import 'package:percent_indicator/percent_indicator.dart';
 
 class HomeScreen extends StatelessWidget {
   final ThemeController themeController = Get.find();
@@ -32,22 +31,105 @@ class HomeScreen extends StatelessWidget {
                   .headlineSmall!
                   .copyWith(fontWeight: FontWeight.bold),
             ),
+            SizedBox(
+              height: 5,
+            ),
             Row(
               children: [
-                       SizedBox(
-                  width: 16,
+                SizedBox(
+                  width: 30,
+                  child: CircularPercentIndicator(
+                    radius: 12.0,
+                    lineWidth: 3.0,
+                    animation: true,
+                    percent: 0.7,
+                    progressColor: AppColors.backgroundDark,
+                    circularStrokeCap: CircularStrokeCap.round,
+                  ),
+                ),
+                SizedBox(
+                  width: 8,
                 ),
                 Text(
                   "Today's Progress",
-                  style: Theme.of(context).textTheme.titleMedium,
+                  style: Theme.of(context)
+                      .textTheme
+                      .titleMedium!
+                      .copyWith(color: AppColors.primaryLight),
                 ),
                 SizedBox(
-                  width: 16,
+                  width: 8,
                 ),
                 Text(
                   "5 tasks left",
                   style: Theme.of(context).textTheme.titleMedium,
                 ),
+              ],
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Priority Task",
+                      style: Theme.of(context)
+                          .textTheme
+                          .titleLarge!
+                          .copyWith(fontWeight: FontWeight.w500),
+                    ),
+                    SizedBox(
+                      width: 8,
+                    ),
+                    Text(
+                      "View all",
+                      style: Theme.of(context)
+                          .textTheme
+                          .titleMedium!
+                          .copyWith(color: AppColors.primaryLight),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 160,
+                  child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      shrinkWrap: true,
+                      itemCount: 3,
+                      itemBuilder: (context, index) {
+                        return Container(
+                          decoration: BoxDecoration(
+                              color: Theme.of(context).colorScheme.primary,
+                              borderRadius: BorderRadius.circular(16)),
+                          margin: EdgeInsets.only(right: 16),
+                          // height: 200,
+                          width: 300,
+
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "Priority Task",
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .titleLarge!
+                                    .copyWith(fontWeight: FontWeight.w500),
+                              ),
+                              SizedBox(
+                                width: 8,
+                              ),
+                              Text("View all",
+                                  style:
+                                      Theme.of(context).textTheme.titleMedium),
+                            ],
+                          ),
+                        );
+                      }),
+                )
               ],
             )
           ],
