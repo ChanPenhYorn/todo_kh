@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:todo_kh/src/controllers/theme_controller.dart';
+import 'package:todo_kh/controllers/theme_controller.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:todo_kh/src/routes/app_route.dart';
-import 'package:todo_kh/src/shared/widgets/app_button_widget.dart';
+import 'package:todo_kh/routes/app_route.dart';
+import 'package:todo_kh/shared/widgets/app_button_widget.dart';
 
 class WelcomeSreen extends StatelessWidget {
   final ThemeController themeController = Get.find();

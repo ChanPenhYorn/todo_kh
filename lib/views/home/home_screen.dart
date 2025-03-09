@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:todo_kh/src/controllers/theme_controller.dart';
-import 'package:todo_kh/src/utils/app_colors.dart';
+import 'package:todo_kh/controllers/theme_controller.dart';
+import 'package:todo_kh/utils/app_colors.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
 class HomeScreen extends StatelessWidget {

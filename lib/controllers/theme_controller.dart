@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:todo_kh/src/utils/app_theme.dart';
+import 'package:todo_kh/utils/app_theme.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -22,12 +22,12 @@ class ThemeController extends GetxController {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     currentThemeIndex.value = prefs.getInt('currentThemeIndex') ?? 0;
   }
-  
+
   void toggleTheme() async {
     currentThemeIndex.value = (currentThemeIndex.value + 1) % themes.length;
     SharedPreferences prefs = await SharedPreferences.getInstance();
     prefs.setInt('currentThemeIndex', currentThemeIndex.value);
   }
 
-  ThemeData get currentTheme => themes[currentThemeIndex.value];  
+  ThemeData get currentTheme => themes[currentThemeIndex.value];
 }

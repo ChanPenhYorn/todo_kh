@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:todo_kh/src/controllers/theme_controller.dart';
-import 'package:todo_kh/src/routes/app_page.dart';
-import 'package:todo_kh/src/routes/app_route.dart';
-import 'package:todo_kh/src/utils/app_translation.dart';
-import 'package:todo_kh/src/views/home/home_screen.dart';
+import 'package:todo_kh/controllers/theme_controller.dart';
+import 'package:todo_kh/routes/app_page.dart';
+import 'package:todo_kh/routes/app_route.dart';
+import 'package:todo_kh/utils/app_translation.dart';
+import 'package:todo_kh/views/home/home_screen.dart';
 import 'package:get/get.dart';
 
 void main() async {
